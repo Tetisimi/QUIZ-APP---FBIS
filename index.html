@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain Quiz 🧠</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body
+    class="min-h-screen bg-[url('background.png')] bg-no-repeat bg-cover flex flex-col items-center justify-center p-4 text-white"
+  >
+    <header class="text-center mb-6">
+      <h1 id="question-number" class="text-2xl font-bold">
+        Getting questions...
+      </h1>
+      <h4 id="question-text" class="text-lg mt-2">Are you ready?</h4>
+    </header>
+
+    <main
+      class="w-full max-w-md bg-white/20 backdrop-blur p-6 rounded-xl shadow-md"
+    >
+      <section>
+        <ul id="options-list" class="space-y-4"></ul>
+      </section>
+
+      <div class="mt-6 flex flex-grow space-x-12">
+        <button
+          id="prev-btn"
+          type="button"
+          class="mt-6 w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+        >
+          &lt; Previous
+        </button>
+        <button
+          id="next-btn"
+          type="button"
+          class="mt-6 w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+        >
+          Next &gt;
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
