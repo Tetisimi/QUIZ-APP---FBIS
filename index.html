@@ -4,8 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brain Quiz 🧠</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🧠</text></svg>"
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js" defer></script>
+    <style>
+      @keyframes leftExpand {
+        0% {
+          width: 20px;
+        }
+        100% {
+          width: 50px;
+        }
+      }
+
+      @keyframes rightExpand {
+        0% {
+          width: 50px;
+        }
+        100% {
+          width: 20px;
+        }
+      }
+
+      #left-dot {
+        animation: leftExpand 1s infinite alternate linear;
+      }
+
+      #right-dot {
+        animation: rightExpand 1s infinite alternate linear;
+      }
+    </style>
   </head>
   <body
     class="min-h-screen bg-[url('background.png')] bg-no-repeat bg-cover flex flex-col items-center justify-center p-4 text-white"
@@ -17,7 +49,21 @@
       <h4 id="question-text" class="text-lg mt-2">Are you ready?</h4>
     </header>
 
+    <div id="loader-container" class="w-full flex justify-center mb-4 hidden">
+      <div id="loader" class="relative w-[65px] aspect-square">
+        <div
+          class="absolute top-0 left-0 aspect-square rounded-full shadow-inner shadow-white"
+          id="left-dot"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 aspect-square rounded-full shadow-inner shadow-white"
+          id="right-dot"
+        ></div>
+      </div>
+    </div>
+
     <main
+      id="hide"
       class="w-full max-w-md bg-white/20 backdrop-blur p-6 rounded-xl shadow-md"
     >
       <section>

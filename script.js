@@ -97,7 +97,12 @@ const checkAnswer = () => {
 };
 
 const startQuiz = async () => {
+  document.querySelector('#hide').classList.add('hidden');
+  document.getElementById('loader-container').classList.remove('hidden');
   await fetchQuestions();
+  document.getElementById('loader-container').classList.add('hidden');
+  document.querySelector('#hide').classList.remove('hidden');
+
   if (questions.length === 0) {
     alert('No questions available. Please try again later.');
     return;
